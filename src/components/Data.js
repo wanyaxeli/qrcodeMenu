@@ -1,0 +1,6 @@
+import img1 from "../assets/rice.jpg"
+import img2 from "../assets/meat.jpg"
+export const Data=[{id:1,category:'burger',name:"spicy burger",img:img1,stock:3,price:100,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0},{id:2,category:'burger',name:"chilly burger",stock:5,price:200,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0,img:img1},
+{id:3,category:'chicken',name:"spicy chicken",stock:4,price:1000,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0,img:img2},{id:4,category:'chicken',name:"fried chicken",stock:6,price:800,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0,img:img1},
+{id:5,category:'beverages',name:"chocolate tea",stock:4,price:500,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0,img:img2},{id:6,category:'beverages',name:"tea",stock:6,price:300,ingridients:'Lorem ipsum dolor sit amet, consectetur adipiscing elit',loved:0,img:img1},
+]
