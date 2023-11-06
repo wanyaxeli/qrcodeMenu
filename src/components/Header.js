@@ -25,7 +25,7 @@ function Header() {
             </ul>
             <div className='headercartIconWrapper'>
              <span><Link to='/cart'><i className="fa fa-shopping-basket" aria-hidden="true"></i></Link></span>
-             <span>{bargeValue}</span>
+             {bargeValue > 0 && <span>{bargeValue}</span>}
             </div>
          </nav>
         </div>

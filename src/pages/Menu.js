@@ -1,35 +1,31 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect,useState,useContext} from 'react'
 import img from "../assets/rice.jpg"
 import meat from "../assets/meat.jpg"
 import Footer from '../components/Footer'
 import { Data } from '../components/Data'
+import { barge } from '../App'
 function Menu() {
+    const {value}=useContext(barge)
+    const[bargeValue,setBarge]=value
     const [product,setProduct]=useState([])
     const handleAddToCart =(id)=>{
         let item=Data.find(item=>item.id===id)
         const quantity={quantity:1}
         const newItem=Object.assign({},item,quantity)
-        if (product.length===0){
-            setProduct(pre=>[...pre,newItem])
-        }else{
-            product.forEach(item=>{
-                console.log(item.id)
-                if(item.id!==newItem.id){
-                    setProduct(pre=>[...pre,newItem])
-                    localStorage.setItem("item",JSON.stringify(product))
-                  
-                }else{
-                    alert('item exist') 
-                    return  
-                }
-               })
-        }
-       
+        setProduct(pre=>[...pre,newItem])
     }
-
+    function showbarge(){
+        let quantity=product.reduce((accu,cur)=>{
+            return accu + cur.quantity
+            },0)
+            setBarge(quantity)
+    }
  useEffect(()=>{
-    localStorage.setItem("item",JSON.stringify(product))
- },[product])
+    if(product.length > 0){
+        localStorage.setItem("item", JSON.stringify(product));
+  }
+    showbarge() 
+},[product])
  useEffect(()=>{
    let item = JSON.parse(window.localStorage.getItem('item'))
    if (item){

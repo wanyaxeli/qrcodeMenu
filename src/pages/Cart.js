@@ -1,7 +1,10 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import img from "../assets/rice.jpg"
 import { Data } from '../components/Data'
+import { barge } from '../App'
 export default function Cart() {
+  const {value}=useContext(barge)
+  const[bargeValue,setBarge,product,setProduct,handleRemoveItem]=value
   const [item,setItem]=useState([])
   const [quantity,setQuantity]=useState(1)
   const [price,setPrice]=useState('')
@@ -30,7 +33,6 @@ export default function Cart() {
   function calculatePrice(id){
    let item=flatenedItem.find(item=>item.id === id)
    const newprice = item.quantity * item.price
-   console.log(newprice)
    setPrice(pre=>({...pre,[id]:newprice}))
    calculateTotalPrice()
   }
@@ -41,6 +43,10 @@ export default function Cart() {
     },0)
     setTotalPrice(result)
 }
+  const handleClose=(id)=>{
+    handleRemoveItem(id)
+    window.location.reload(true)
+  }
   useEffect(()=>{
   
   let item = JSON.parse(localStorage.getItem('item'))
@@ -78,7 +84,7 @@ export default function Cart() {
         </div>
         <div className='cartCardpriceWrapper'>
           <p>${ price[item.id]  }</p>
-          <p>&times;</p>
+          <p onClick={()=>handleClose(item.id)}>&times;</p>
         </div>
       </div>
         )

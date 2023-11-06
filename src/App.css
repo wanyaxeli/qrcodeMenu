@@ -510,6 +510,13 @@ nav ul li:hover::before{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 50px;
+}
+.popularFoodCardIconWrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 .popularFoodCardBtnWrapper button{
   padding: 8px 15px;
@@ -519,6 +526,15 @@ nav ul li:hover::before{
   border-radius: 5px;
   cursor: pointer;
   text-transform: capitalize;
+}
+.displayMenuWrapper{
+  flex: .6;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+.displayMenuWrapper p{
+  margin: 0 15px;
 }
 .popularFoodCardBtnWrapper button:hover{
   background-color: #231f40;
