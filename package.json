@@ -1,6 +1,7 @@
 {
   "name": "hotel",
   "version": "0.1.0",
+  "homepage":"http://wanyaxeli.github.io/qrcodeMenu/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
